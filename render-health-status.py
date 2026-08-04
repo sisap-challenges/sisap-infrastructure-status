@@ -319,7 +319,7 @@ def render_page(matrix, records):
     <p>
       Automated spot checks for configured
       <a href="https://github.com/sisap-challenges/sisap-infrastructure-status">SISAP 2026 submissions</a>.
-      Each result reports the recall produced by the local TIRA run.
+      Each result reports the recall of the system on the spot-check datasets. Please note that the recall scores on the spot-check dataset are not meaningful, the CI tests here are only intended to ensure that the systems run and produce the same (or a similar) output, i.e., "success" here is when the recall value stays the same over time but the individual recall score is not meaningful.
     </p>
   </header>
 
