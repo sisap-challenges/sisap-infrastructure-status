@@ -1,0 +1,16 @@
+systems:
+  pipnn/PiPNN:
+    datasets:
+      - task-1-spot-check-20260602-training
+
+  luis/primordial-foremast:
+    datasets:
+      - task-2-spot-check-20260602-training
+
+  tuskanny-seismic/seismic:
+    datasets:
+      - task-3-spot-check-20260529-training
+
+  tuskanny-kannolo/constant-headline:
+    datasets:
+      - task-3-spot-check-20260529-training
