@@ -54,9 +54,9 @@ systems:
     datasets:
       - task-2-spot-check-20260602-training
 
-  lzen402/forward-bleed:
-    datasets:
-      - task-1-spot-check-20260602-training
+#  lzen402/forward-bleed:
+#    datasets:
+#      - task-1-spot-check-20260602-training
 
   ketchup-needs-nuggets/stern-sequence:  
     datasets:
