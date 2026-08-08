@@ -3,8 +3,49 @@ systems:
     datasets:
       - task-1-spot-check-20260602-training
 
+  plain-local-search/PlainLS-config-6-local-compile:
+    datasets:
+      - task-1-spot-check-20260602-training
+
+  deglib/weighted-ancestor:
+    datasets:
+      - task-1-spot-check-20260602-training
+
+  crusty-coders/hampynn:
+    datasets:
+      - task-1-spot-check-20260602-training
+
+  wh-team/taxonomic-volume:
+    datasets:
+      - task-1-spot-check-20260602-training
+
+  baremetal-vectors/arid-contrast:
+    datasets:
+      - task-1-spot-check-20260602-training
+
+  hanswurst/final-compiled-different:
+    datasets:
+      - task-1-spot-check-20260602-training
+
+  basel1nerz/julia-baseline:
+    datasets:
+      - task-1-spot-check-20260602-training
+
+  lzen402/forward-bleed:
+    datasets:
+      - task-1-spot-check-20260602-training
+
+  ketchup-needs-nuggets/stern-sequence:  
+    datasets:
+      - task-1-spot-check-20260602-training
+
+  dream-team/brave-source:
+    datasets:
+      - task-1-spot-check-20260602-training
+
   luis/primordial-foremast:
     datasets:
+      - task-1-spot-check-20260602-training
       - task-2-spot-check-20260602-training
 
   tuskanny-seismic/seismic:
