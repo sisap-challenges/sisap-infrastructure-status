@@ -138,8 +138,15 @@ def result_cell(record):
     if not isinstance(evaluation, dict):
         return '<td class="failed">No evaluation</td>'
 
-    recall = format_number(evaluation.get("Recall"))
-    return f"<td>{html.escape(recall)}</td>"
+    legacy_recall = evaluation.get("Recall")
+    minimum_recall = format_number(evaluation.get("Recall (Min)", legacy_recall))
+    maximum_recall = format_number(evaluation.get("Recall (Max)", legacy_recall))
+    return (
+        "<td>"
+        f"<span><strong>Min:</strong> {html.escape(minimum_recall)}</span>"
+        f"<span><strong>Max:</strong> {html.escape(maximum_recall)}</span>"
+        "</td>"
+    )
 
 
 def render_results_table(rows, history, timestamps):
@@ -211,7 +218,7 @@ def render_page(matrix, records):
         sections.append(
             f"""
     <section>
-      <h2>Submissions 2026 Task {task}</h2>
+      <h2>Selected Submissions 2026 Task {task}</h2>
       {content}
     </section>
             """

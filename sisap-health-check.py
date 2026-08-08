@@ -12,6 +12,7 @@ import yaml
 import tempfile
 import zipfile
 import shutil
+from contextlib import contextmanager
 from os import environ
 from subprocess import check_output
 from tira.io_utils import parse_prototext_key_values
@@ -69,13 +70,36 @@ def populate_download_datasets_from_tira():
         ALL_TESTS[test_name] = test_execution  
 
 
-def run_sisap_system_test(sisap_system, dataset):
+@contextmanager
+def configured_environment(environment_variables):
+    environment_variables = environment_variables or {}
+    previous_values = {
+        name: environ.get(name)
+        for name in environment_variables
+    }
+
+    try:
+        for name, value in environment_variables.items():
+            environ[name] = str(value)
+        yield
+    finally:
+        for name, previous_value in previous_values.items():
+            if previous_value is None:
+                environ.pop(name, None)
+            else:
+                environ[name] = previous_value
+
+
+def run_sisap_system_test(sisap_system, dataset, environment_variables=None):
     cmd = [
         "tira-cli", "run", "local", "--approach",
         "sisap-2026/" + sisap_system, "--input", dataset
     ]
 
-    results = check_output(cmd)
+    with configured_environment(environment_variables):
+        if environment_variables:
+            cmd += ["--forward-environment-variable"] + list(environment_variables.keys())
+        results = check_output(cmd)
     out_dir = results.decode("UTF-8").split("Full evaluation results: ")[1].split("\n")[0]
     ret = {"sisap_system": sisap_system, "dataset_id": dataset}
     
@@ -95,7 +119,8 @@ def populate_run_sisap_systems_tests(run_dir):
             test_execution = partial(
                 run_sisap_system_test,
                 system_name,
-                dataset
+                dataset,
+                system.get("environment-variables"),
             )
             ALL_TESTS[test_name] = test_execution
 

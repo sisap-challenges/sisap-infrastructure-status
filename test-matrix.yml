@@ -6,30 +6,53 @@ systems:
   plain-local-search/PlainLS-config-6-local-compile:
     datasets:
       - task-1-spot-check-20260602-training
+    environment-variables:
+      OMP_NUM_THREADS: 1
 
   deglib/weighted-ancestor:
     datasets:
       - task-1-spot-check-20260602-training
+      - task-2-spot-check-20260602-training
 
   crusty-coders/hampynn:
     datasets:
       - task-1-spot-check-20260602-training
 
+  crusty-coders/teal-console:
+    datasets:
+      - task-2-spot-check-20260602-training
+
   wh-team/taxonomic-volume:
     datasets:
       - task-1-spot-check-20260602-training
 
+  wh-team/late-shark:
+    datasets:
+      - task-2-spot-check-20260602-training
+      - task-3-spot-check-20260529-training
+
   baremetal-vectors/arid-contrast:
     datasets:
       - task-1-spot-check-20260602-training
+    environment-variables:
+      OMP_NUM_THREADS: 1
 
   hanswurst/final-compiled-different:
     datasets:
       - task-1-spot-check-20260602-training
+      - task-2-spot-check-20260602-training
+      - task-3-spot-check-20260529-training
 
   basel1nerz/julia-baseline:
     datasets:
       - task-1-spot-check-20260602-training
+      - task-2-spot-check-20260602-training
+    environment-variables:
+      JULIA_NUM_THREADS: 1
+
+  basel1nerz/python-baseline:
+    datasets:
+      - task-2-spot-check-20260602-training
 
   lzen402/forward-bleed:
     datasets:
@@ -47,11 +70,36 @@ systems:
     datasets:
       - task-1-spot-check-20260602-training
       - task-2-spot-check-20260602-training
+      - task-3-spot-check-20260529-training
+
+  dream-team/aged-goldbricker:
+    datasets:
+      - task-2-spot-check-20260602-training
 
   tuskanny-seismic/seismic:
     datasets:
       - task-3-spot-check-20260529-training
 
   tuskanny-kannolo/constant-headline:
+    datasets:
+      - task-3-spot-check-20260529-training
+
+#  basque-invaders/rowdy-child:
+#    datasets:
+#      - task-3-spot-check-20260529-training
+      
+  forbidden-steps/witty-albedo:
+    datasets:
+      - task-3-spot-check-20260529-training
+
+  jack/final:
+    datasets:
+      - task-3-spot-check-20260529-training
+
+  crusty-coders/plain-hook:
+    datasets:
+      - task-3-spot-check-20260529-training
+
+  seed-42/bordeaux-speed:
     datasets:
       - task-3-spot-check-20260529-training
