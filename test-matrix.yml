@@ -50,6 +50,12 @@ systems:
     environment-variables:
       JULIA_NUM_THREADS: 1
 
+  basel1nerz/julia-baseline-exhaustive:
+    datasets:
+      - task-3-spot-check-20260529-training
+    environment-variables:
+      JULIA_NUM_THREADS: 1
+
   basel1nerz/python-baseline:
     datasets:
       - task-2-spot-check-20260602-training
