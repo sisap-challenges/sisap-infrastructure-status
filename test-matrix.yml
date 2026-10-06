@@ -4,6 +4,7 @@ systems:
       - task-1-spot-check-20260602-training
 
   pipnn/PiPNN-from-source:
+    datasets:
       - task-1-spot-check-20260602-training
 
   plain-local-search/PlainLS-config-6-local-compile:
