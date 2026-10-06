@@ -3,11 +3,18 @@ systems:
     datasets:
       - task-1-spot-check-20260602-training
 
+  pipnn/PiPNN-from-source:
+      - task-1-spot-check-20260602-training
+
   plain-local-search/PlainLS-config-6-local-compile:
     datasets:
       - task-1-spot-check-20260602-training
     environment-variables:
       OMP_NUM_THREADS: 1
+
+  plain-local-search/AI-Optimized:
+    datasets:
+      - task-1-spot-check-20260602-training
 
   deglib/weighted-ancestor:
     datasets:
